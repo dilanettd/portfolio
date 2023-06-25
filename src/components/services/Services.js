@@ -1,86 +1,54 @@
-import React, { useContext } from "react";
-import "./Services.scss";
-import Card from "../Card/Card";
-import HeartEmoji from "../../img/heartemoji.png";
-import Glasses from "../../img/glasses.png";
-import Humble from "../../img/humble.png";
-import { themeContext } from "../../Context";
+import React from "react";
 import { motion } from "framer-motion";
-import Resume from "../../resume/CV_en.pdf";
+
+import "./Services.scss";
+import Card from "../card/Card";
+import html from "../../img/html.png";
+import code from "../../img/code.png";
+import Title from "../title/Title";
 
 const Services = () => {
-  // context
-  const theme = useContext(themeContext);
-  const darkMode = theme.state.darkMode;
-
-  // transition
-  const transition = {
-    duration: 1,
-    type: "spring",
-  };
-
   return (
-    <div className="services" id="services">
-      {/* left side */}
-      <div className="awesome">
-        {/* dark mode */}
-        <span style={{ color: darkMode ? "white" : "" }}>My Awesome</span>
-        <span>services</span>
-        <spane>
-          Lorem ispum is simpley dummy text of printing of printing Lorem
-          <br />
-          ispum is simpley dummy text of printing
-        </spane>
-        <a href={Resume} download>
-          <button className="button s-button">Download CV</button>
-        </a>
-        <div className="blur s-blur1" style={{ background: "#ABF1FF94" }}></div>
-      </div>
-      {/* right */}
-      <div className="cards">
-        {/* first card */}
+    <div className="container">
+      <div className="services">
+        <Title title={"Services"} subtitle={"What I Can Do"} />
+        <div className="services-description my-3">
+          In my role as a full-stack developer, I'm able to oversee all phases
+          of web development projects, from design and development through to
+          production.
+          <div className="blur"></div>
+        </div>
+        {/* right */}
         <motion.div
-          initial={{ left: "25rem" }}
-          whileInView={{ left: "14rem" }}
-          transition={transition}
-        >
-          <Card
-            emoji={HeartEmoji}
-            heading={"Design"}
-            detail={"Figma, Sketch, Photoshop, Adobe Illustrator, Adobe xd"}
-          />
+          className="row"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}>
+          <div className="col-xs-12 col-md-6">
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Card
+                emoji={code}
+                heading={"BACKEND APPS"}
+                detail={
+                  "Build scalable and maintainable server applications using cutting-edge technologies such as"
+                }
+                tooling={"SpringBoot, Laravel, Flask, Nodejs"}
+              />
+            </motion.div>
+          </div>
+          <div className="col-xs-12 col-md-6">
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Card
+                emoji={html}
+                heading={"FRONTEND APPS"}
+                detail={
+                  "Build client-side applications with modern features like SPA and maintain semantic coding style among other best practices for SEO optimisation. Use modern tech such as:"
+                }
+                tooling={"Angular, ReactJS, Bootstrap, MaterialUI"}
+              />
+            </motion.div>
+          </div>
         </motion.div>
-        {/* second card */}
-        <motion.div
-          initial={{ left: "-11rem", top: "12rem" }}
-          whileInView={{ left: "-4rem" }}
-          transition={transition}
-        >
-          <Card
-            emoji={Glasses}
-            heading={"Developer"}
-            detail={"Html, Css, JavaScript, React, Nodejs, Express"}
-          />
-        </motion.div>
-        {/* 3rd */}
-        <motion.div
-          initial={{ top: "19rem", left: "25rem" }}
-          whileInView={{ left: "12rem" }}
-          transition={transition}
-        >
-          <Card
-            emoji={Humble}
-            heading={"UI/UX"}
-            detail={
-              "Lorem ispum dummy text are usually use in section where we need some random text"
-            }
-            color="rgba(252, 166, 31, 0.45)"
-          />
-        </motion.div>
-        <div
-          className="blur s-blur2"
-          style={{ background: "var(--purple)" }}
-        ></div>
       </div>
     </div>
   );

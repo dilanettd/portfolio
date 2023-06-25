@@ -1,68 +1,89 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 
 import "./testimonial.scss";
-import "swiper/css";
-import { Pagination } from "swiper";
-import "swiper/css/pagination";
+import TestimonialsDetails from "./testimonialsDetails/TestimonialsDetails";
 import profilePic1 from "../../img/profile1.jpg";
 import profilePic2 from "../../img/profile2.jpg";
 import profilePic3 from "../../img/profile3.jpg";
 import profilePic4 from "../../img/profile4.jpg";
+import Title from "../title/Title";
 
 const Testimonial = () => {
+  const options = {
+    loop: true,
+    center: true,
+    items: 3,
+    margin: 0,
+    autoplay: true,
+    dots: true,
+    autoplayTimeout: 10000,
+    smartSpeed: 450,
+    nav: false,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      992: {
+        items: 2,
+      },
+      1000: {
+        items: 3,
+      },
+    },
+  };
+
   const clients = [
     {
+      name: "Rekob Ramya",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.",
       img: profilePic1,
-      review:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
     },
     {
+      name: "Brandon Savage",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.",
       img: profilePic2,
-      review:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
     },
     {
+      name: "Steve Burns",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.",
       img: profilePic3,
-      review:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
     },
     {
+      name: "Kevin Canlas",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.",
       img: profilePic4,
-      review:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
     },
   ];
 
   return (
-    <div className="t-wrapper" id="testimonial">
-      <div className="t-heading">
-        <span>Clients always get </span>
-        <span>Exceptional Work </span>
-        <span>from me...</span>
+    <div className="container">
+      <div className="testimonials">
+        <div className="mb-5">
+          <Title title={"Testimonials"} subtitle={"What They Say About Me"} />
+          <div className="blur t-blur2" style={{ background: "#dcf1f5" }}></div>
+        </div>
         <div
           className="blur t-blur1"
-          style={{ background: "var(--purple)" }}
-        ></div>
-        <div className="blur t-blur2" style={{ background: "skyblue" }}></div>
+          style={{ background: "var(--purple)" }}></div>
+
+        <OwlCarousel
+          id="customer-testimonoals"
+          className="owl-carousel owl-theme"
+          {...options}>
+          {clients.length > 0 &&
+            clients.map((clients, index) => {
+              return <TestimonialsDetails clients={clients} key={index} />;
+            })}
+        </OwlCarousel>
       </div>
-      <Swiper
-        // install Swiper modules
-        modules={[Pagination]}
-        slidesPerView={1}
-        pagination={{ clickable: true }}
-      >
-        {clients.map((client, index) => {
-          return (
-            <SwiperSlide key={index}>
-              <div className="testimonial">
-                <img src={client.img} alt="" />
-                <span>{client.review}</span>
-              </div>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
+      <div className="blur t-blur2" style={{ background: "#dcf1f5" }}></div>
     </div>
   );
 };

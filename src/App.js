@@ -11,6 +11,11 @@ import Testimonial from "./components/testimonials/Testimonial";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import { themeContext } from "./Context";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import ScrolltoTop from "./components/scrolltoTop/ScrolltoTop";
+import About from "./components/about/About";
 
 function App() {
   const theme = useContext(themeContext);
@@ -22,16 +27,16 @@ function App() {
       style={{
         background: darkMode ? "black" : "",
         color: darkMode ? "white" : "",
-      }}
-    >
+      }}>
       <Navbar />
       <Intro />
+      <About />
       <Services />
-      <Experience />
       <Works />
       <Portfolio />
       <Testimonial />
       <Contact />
+      <ScrolltoTop />
       <Footer />
     </div>
   );

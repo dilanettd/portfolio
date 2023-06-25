@@ -1,77 +1,91 @@
-.Intro {
+.intro {
   display: flex;
-  height: 77vh;
-  margin-top: 6rem;
+  margin-top: 16rem;
+  margin-bottom: 8rem;
 }
 
-/* left side styling */
-.i-left {
+/* Left side styling */
+.intro-left {
   display: flex;
-  position: relative;
   flex: 1;
   flex-direction: column;
   gap: 2rem;
 }
-.i-name {
+
+.intro-left__name {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+
+  @media screen and (max-width: 992px) {
+    font-size: 1.2rem;
+    text-align: center;
+  }
 }
-.i-name > :nth-child(1) {
+
+.intro-left__name > :nth-child(1) {
   color: var(--black);
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 1.8rem;
+  white-space: nowrap;
+
+  @media screen and (max-width: 992px) {
+    font-size: 1.2rem;
+  }
 }
-.i-name > :nth-child(2) {
+
+.intro-left__name > :nth-child(2) {
+  color: var(--black);
+  font-weight: bold;
+  font-size: 2.2rem;
+  white-space: nowrap;
+
+  @media screen and (max-width: 992px) {
+    font-size: 1.4rem;
+  }
+}
+
+.intro-left__name > :nth-child(3) {
+  white-space: nowrap;
   color: var(--orange);
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2.2rem !important;
+
+  @media screen and (max-width: 992px) {
+    font-size: 1.6rem !important;
+  }
 }
-.i-name > :nth-child(3) {
-  font-weight: 100;
-  font-size: 14px;
-  color: var(--gray);
-  margin-top: 10px;
+
+.intro-left__button {
+  margin-top: 1rem;
+  font-size: 18px;
 }
-.i-button {
-  width: 6rem;
-  height: 2rem;
-}
-.i-icons {
-  margin-top: 3rem;
-  display: flex;
-  gap: 0rem;
-}
-.i-icons > * {
-  transform: scale(0.5);
-}
-.i-icons > *:hover {
-  cursor: pointer;
-}
-/* right side styling */
-.i-right {
+
+/* Right side styling */
+.intro-right {
   flex: 1;
   position: relative;
+
+  @media screen and (max-width: 992px) {
+    margin-bottom: 3rem;
+  }
 }
-.i-right > * {
+
+.intro-right > * {
   position: absolute;
   z-index: 1;
 }
-.i-right > :nth-child(1) {
-  transform: scale(0.69);
-  left: -15%;
-  top: -9%;
-}
-.i-right > :nth-child(2) {
-  top: -4.6rem;
-  transform: scale(0.67);
-  left: -3rem;
-}
-.i-right > :nth-child(3) {
+
+.intro-right > :nth-child(1) {
   transform: scale(1.4);
   left: 28%;
+
+  @media screen and (max-width: 576px) {
+    transform: scale(1.2);
+    left: 15%;
+  }
 }
-.i-right > :nth-child(4) {
+
+.intro-right > :nth-child(2) {
   transform: scale(0.62);
   top: -19%;
   left: -24%;
@@ -79,13 +93,33 @@
   padding: 0;
 }
 
-/* blur */
-.blur {
+.intro-right__image {
+  position: relative;
+  max-height: 330px;
+}
+
+.intro-right__image::after {
+  content: "";
+  display: block;
   position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1)
+  );
+  filter: blur(10px);
+}
+
+/* Blur */
+.blur-intro {
   width: 22rem;
   height: 14rem;
   border-radius: 50%;
-  background: #edd0ff;
+  background: #edd0ff85;
   filter: blur(212px);
   z-index: -9;
   top: -18%;
@@ -93,22 +127,24 @@
   filter: blur(72px);
 }
 
-@media screen and (max-width: 480px) {
-  .Intro {
-    flex-direction: column;
-    gap: 7rem;
-    height: 64rem;
+@media screen and (max-width: 992px) {
+  .intro {
+    flex-direction: column-reverse;
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+    gap: 1rem;
   }
 
-  .i-right {
+  .intro-right {
     transform: scale(0.8);
     left: -3rem;
   }
-  .i-right .blur {
+
+  .intro-right .blur {
     display: none;
   }
+
   .floating-div:nth-of-type(1) {
-    /* display: none; */
     top: -7rem !important;
   }
 }

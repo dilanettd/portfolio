@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { themeContext } from "../../Context";
-import "./experience.scss";
+import "./Experience.scss";
 
 const Experience = () => {
   const theme = useContext(themeContext);
@@ -12,8 +12,7 @@ const Experience = () => {
         {/* darkMode */}
         <div
           className="circle"
-          style={{ color: darkMode ? "var(--orange)" : "" }}
-        >
+          style={{ color: darkMode ? "var(--orange)" : "" }}>
           8+
         </div>
         <span style={{ color: darkMode ? "white" : "" }}>years </span>
@@ -22,8 +21,7 @@ const Experience = () => {
       <div className="achievement">
         <div
           className="circle"
-          style={{ color: darkMode ? "var(--orange)" : "" }}
-        >
+          style={{ color: darkMode ? "var(--orange)" : "" }}>
           20+
         </div>
         <span style={{ color: darkMode ? "white" : "" }}>completed </span>
@@ -32,8 +30,7 @@ const Experience = () => {
       <div className="achievement">
         <div
           className="circle"
-          style={{ color: darkMode ? "var(--orange)" : "" }}
-        >
+          style={{ color: darkMode ? "var(--orange)" : "" }}>
           5+
         </div>
         <span style={{ color: darkMode ? "white" : "" }}>companies </span>

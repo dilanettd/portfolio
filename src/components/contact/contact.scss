@@ -1,53 +1,77 @@
-.contact-form {
+.contact {
   padding: 0 3rem 0 3rem;
-  display: flex;
-  height: 80vh;
-  margin-top: 4rem;
-  /* scroll */
-  padding-top: 3rem;
+  margin: 4rem auto;
+  padding-top: 1rem;
+  margin-bottom: 12rem;
+  max-width: 1000px !important;
 }
 
-.c-right {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  flex: 1;
+.contact-description {
+  color: var(--gray);
+  font-size: 1rem;
+  margin-top: 1rem;
+  text-align: justify;
 }
 
-.c-right > form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
+.contact-infos {
+  margin-top: 1rem;
+  color: var(--gray);
+  font-size: 1.1rem;
+  i {
+    color: var(--orange);
+    margin-right: 5px;
+    font-size: 30px;
+  }
+  small {
+    font-size: 0.9rem;
+  }
+  &__title {
+    margin-bottom: -5px;
+    color: var(--orange);
+  }
 }
 
-.c-right .user {
-  width: 20rem;
-  height: 2rem;
+.contact-input {
+  width: 100%;
+  height: 2.5rem;
   padding: 0.3em;
   outline: none;
-  border: 2px solid var(--orange);
+  border: 1px solid var(--orange);
   border-radius: 8px;
   font-size: 16px;
+  margin-bottom: 1rem;
 }
 
 textarea {
-  height: 4rem !important;
+  height: 10rem !important;
 }
 
-.c-blur1 {
+.contact-button__submit {
+  display: flex;
+  justify-content: center;
+}
+
+.c-contact-blur {
   top: 1rem;
   left: 8rem;
 }
 
-@media screen and (max-width: 480px) {
-  .contact-form {
-    padding: 0;
-    flex-direction: column;
-    gap: 5rem;
-    height: 40rem;
+@media screen and (max-width: 992px) {
+  .contact-infos {
+    margin-left: 12%;
   }
-  .c-right .user {
-    width: 16rem;
+  .contact {
+    padding: 0;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+  .contact-right__right {
+    width: 18rem;
+  }
+  .contact-infos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 0;
   }
 }

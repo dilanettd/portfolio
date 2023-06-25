@@ -1,42 +1,29 @@
-import React, { useContext } from "react";
+import React from "react";
+
 import "./portfolio.scss";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import Sidebar from "../../img/sidebar.png";
 import Ecommerce from "../../img/ecommerce.png";
-import HOC from "../../img/hoc.png";
-import MusicApp from "../../img/musicapp.png";
-import { themeContext } from "../../Context";
+import Title from "../title/Title";
+import ProjetItem from "./projetItem/ProjetItem";
 
 const Portfolio = () => {
-  const theme = useContext(themeContext);
-  const darkMode = theme.state.darkMode;
   return (
-    <div className="portfolio" id="portfolio">
-      {/* heading */}
-      <span style={{ color: darkMode ? "white" : "" }}>Recent Projects</span>
-      <span>Portfolio</span>
-
-      {/* slider */}
-      <Swiper
-        spaceBetween={30}
-        slidesPerView={3}
-        grabCursor={true}
-        className="portfolio-slider"
-      >
-        <SwiperSlide>
-          <img src={Sidebar} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={Ecommerce} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={MusicApp} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={HOC} alt="" />
-        </SwiperSlide>
-      </Swiper>
+    <div className="container">
+      <div className="portfolio">
+        {/* heading */}
+        <Title subtitle={"My Projects"} title={"Portfolio"} />
+        {/* slider */}
+        <div className="content my-5">
+          <ProjetItem
+            image={Ecommerce}
+            tittle={"Ecommerce"}
+            description={
+              "Lorem ip asperiores sapiente,quidem! Officiis, Error tempore iusto mollitia laborum quis nesciunt cupiditate repellat vitae ipsum perspiciatis, nisi alias distinctio architecto sint ex corporis? Maxime error pariatur tenetur harum?"
+            }
+            technologies={"ReactJS, Laravel, Bootstrap"}
+            demoLink={"https://katika.io/"}
+          />
+        </div>
+      </div>
     </div>
   );
 };

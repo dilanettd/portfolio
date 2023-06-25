@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import "./toggle.scss";
 import Moon from "@iconscout/react-unicons/icons/uil-moon";
 import Sun from "@iconscout/react-unicons/icons/uil-sun";
+
+import "./Toggle.scss";
 import { themeContext } from "../../Context";
 
 const Toggle = () => {
@@ -13,14 +14,7 @@ const Toggle = () => {
   };
   return (
     <div className="toggle" onClick={handleClick}>
-      <Moon />
-      <Sun />
-      {/*                              toggle.css mein left ki property aik assign hy ussy delete
-                                          krna hy pehly */}
-      <div
-        className="t-button"
-        style={darkMode ? { left: "2px" } : { right: "2px" }}
-      ></div>
+      {darkMode ? <Sun /> : <Moon />}
     </div>
   );
 };

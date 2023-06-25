@@ -1,47 +1,13 @@
 .services {
-  padding: 0 3rem 0 3rem;
-  display: flex;
-  height: 30rem;
-  margin-bottom: 8rem;
-  margin-top: 9rem;
-  margin-bottom: 13rem;
-  /* scroll view */
-  padding-top: 3rem;
-}
-/* left side */
-.awesome {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  /* gap: 20px; */
+  padding-top: 6rem;
+  padding-bottom: 2rem;
 }
 
-.awesome > :nth-child(1) {
-  color: var(--black);
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-.awesome > :nth-child(2) {
-  color: var(--orange);
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-.awesome > :nth-child(3) {
+.services-description {
   color: var(--gray);
-  font-size: 14px;
+  font-size: 1rem;
   margin-top: 1rem;
-}
-.s-button {
-  width: 8rem;
-  height: 2rem;
-  margin-top: 1rem;
-}
-/* right sided */
-.cards {
-  position: relative;
-}
-.cards > * {
-  position: absolute;
+  text-align: justify;
 }
 
 /* blur */
@@ -50,26 +16,24 @@
   top: 8rem;
 }
 
-.s-blur1 {
+.blur {
+  position: absolute;
+  width: 22rem;
+  height: 14rem;
+  border-radius: 50%;
+  background: #b9c8e7;
+  filter: blur(212px);
+  z-index: -9;
+  top: -18%;
+  left: 66%;
+  filter: blur(72px);
   top: 13rem;
   left: -18rem;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 992px) {
   .services {
-    margin-top: 0;
-    flex-direction: column;
-    gap: 5rem;
-    height: 66rem;
+    margin-top: 5rem;
     padding: 0;
-  }
-
-  .cards {
-    display: flex;
-    flex-direction: column;
-    gap: 17rem;
-  }
-  .cards > * {
-    position: static;
   }
 }

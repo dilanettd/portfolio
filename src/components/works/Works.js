@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import "./Works.scss";
-import Upwork from "../../img/Upwork.png";
-import Fiverr from "../../img/fiverr.png";
-import Amazon from "../../img/amazon.png";
-import Shopify from "../../img/Shopify.png";
-import Facebook from "../../img/Facebook.png";
+
+import Katika from "../../img/logo/katika.svg";
+import Paysika from "../../img/logo/paysika.webp";
+import Upwork from "../../img/logo/Upwork.png";
+import TonkaIn from "../../img/logo/tonkain.jpg";
+import Mesintech from "../../img/logo/mesintech.png";
+
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
@@ -16,7 +18,7 @@ const Works = () => {
 
   // transition
   return (
-    <div className="works" id="works">
+    <div className="works container" id="works">
       {/* left side */}
       <div className="w-left">
         <div className="awesome">
@@ -25,23 +27,15 @@ const Works = () => {
             Works for All these
           </span>
           <span>Brands & Clients</span>
-          <spane>
-            Lorem ispum is simpley dummy text of printing of printing Lorem
-            <br />
-            ispum is simpley dummy text of printingLorem ispum is simpley dummy
-            text
-            <br />
-            y dummy text of printingLorem
-            <br />
-            ispum is simpley dummy text of printing
-          </spane>
+          <span>
+            I'm proud to have collaborated with some awesome companies
+          </span>
           <Link to="contact" smooth={true} spy={true}>
             <button className="button s-button">Hire Me</button>
           </Link>
           <div
             className="blur s-blur1"
-            style={{ background: "#ABF1FF94" }}
-          ></div>
+            style={{ background: "#ABF1FF94" }}></div>
         </div>
 
         {/* right side */}
@@ -52,22 +46,21 @@ const Works = () => {
           whileInView={{ rotate: 0 }}
           viewport={{ margin: "-40px" }}
           transition={{ duration: 3.5, type: "spring" }}
-          className="w-mainCircle"
-        >
+          className="w-mainCircle">
           <div className="w-secCircle">
             <img src={Upwork} alt="" />
           </div>
           <div className="w-secCircle">
-            <img src={Fiverr} alt="" />
+            <img src={Katika} alt="" />
           </div>
           <div className="w-secCircle">
-            <img src={Amazon} alt="" />
+            <img style={{ width: "130px" }} src={Paysika} alt="" />
           </div>{" "}
           <div className="w-secCircle">
-            <img src={Shopify} alt="" />
+            <img style={{ width: "130px" }} src={TonkaIn} alt="" />
           </div>
           <div className="w-secCircle">
-            <img src={Facebook} alt="" />
+            <img style={{ width: "130px" }} src={Mesintech} alt="" />
           </div>
         </motion.div>
         {/* background Circles */}

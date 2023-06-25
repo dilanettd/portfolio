@@ -1,9 +1,10 @@
 :root {
   --yellow: #F5C32C;
   --orange: #FCA61F;
-  --black: #242D49;
+  --black: #22252c;
   --gray: #788097;
   --blueCard: #DDF8FE;
+  --blue: #5664a0;
   --purple: rgb(238 210 255);
   --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
   --orangeCard: rgba(252, 166, 31, 0.45);
@@ -11,15 +12,14 @@
 }
 
 .App {
-  padding: 0.5rem 3.5rem;
   overflow: hidden;
   color: var(--black);
 }
 
 .button {
   background: linear-gradient(180deg, #fdc50f 26.71%, #fb982f 99.36%);
-  box-shadow: 0px 20px 24px 3px rgba(251, 161, 40, 0.42);
-  border-radius: 34px;
+  box-shadow: 0px 5px 12px 3px rgba(251, 161, 40, 0.42);
+  border-radius: 10px;
   border: none;
   color: white;
   font-size: 16px;
@@ -31,11 +31,4 @@
   cursor: pointer;
   border: 1px solid var(--orange);
   color: var(--orange);
-}
-
-@media screen and (max-width: 480px) {
-  .App {
-    padding: 0.5rem 1rem;
-
-  }
 }
